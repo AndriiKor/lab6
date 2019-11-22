@@ -1,3 +1,5 @@
 FROM ubuntu
-RUN apt-get update
-RUN apt-get y install apache2
+LABEL maintainer="andrii"
+RUN apt-get update -y
+RUN apt-get y install apache2 -y
+CMD ["apache2ctl","-D", "FOREGROUND"]
